@@ -15,8 +15,8 @@ import androidx.appcompat.app.AppCompatActivity;
 public class MainActivity extends AppCompatActivity {
     ListView listView;
 
-    String[] fruitNames = {"Apple","Orange","Kiwi","Passion","Banana"};
-    int[] fruitImages = {R.drawable.apple,R.drawable.oranges,R.drawable.kiwi,R.drawable.watermelon,R.drawable.banana};
+    String[] fruitNames = {"Algebra","Orange","Kiwi","Melancia","Banana"};
+    int[] fruitImages = {R.drawable.algebra,R.drawable.oranges,R.drawable.kiwi,R.drawable.watermelon,R.drawable.banana};
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -60,7 +60,7 @@ public class MainActivity extends AppCompatActivity {
 
         @Override
         public View getView(int i, View view, ViewGroup viewGroup) {
-            View view1 = getLayoutInflater().inflate(R.layout.conteudo1,null);
+            View view1 = getLayoutInflater().inflate(R.layout.activity_listdata,null);
             //getting view in row_data
             TextView name = view1.findViewById(R.id.fruits);
             ImageView image = view1.findViewById(R.id.images);
