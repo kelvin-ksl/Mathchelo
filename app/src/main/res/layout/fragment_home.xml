@@ -6,6 +6,13 @@
     android:layout_height="match_parent"
     tools:context=".ui.home.HomeFragment">
 
+<!--    <Listview-->
+<!--        android:id="@+id/listview"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content">-->
+<!--    </Listview>-->
+
+
     <TextView
         android:id="@+id/text_home"
         android:layout_width="match_parent"
