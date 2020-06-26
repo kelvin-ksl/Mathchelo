@@ -5,7 +5,6 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Adapter;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ImageView;
@@ -22,9 +21,6 @@ import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
-
-import java.text.DateFormatSymbols;
-import java.util.zip.DataFormatException;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -79,7 +75,7 @@ public class MainActivity extends AppCompatActivity {
         int rImagem[];
 
         MyAdapter (Context c, String nome[], String descricao[], int imagem[]) {
-            super(c,R.layout.lista_objetos,R.id.textView1, nome);
+            super(c,R.layout.lista,R.id.textView1, nome);
             this.context = c;
             this.rNome = nome;
             this.rDescricao = descricao;
@@ -90,16 +86,16 @@ public class MainActivity extends AppCompatActivity {
         @Override
         public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
             LayoutInflater layoutInflater = (LayoutInflater)getApplicationContext().getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-            View lista_objetos = layoutInflater.inflate(R.layout.lista_objetos, parent, false);
-            ImageView myImagem = lista_objetos.findViewById(R.id.image);
-            TextView myNome = lista_objetos.findViewById(R.id.textView1);
-            TextView myDescricao = lista_objetos.findViewById(R.id.textView2);
+            View lista = layoutInflater.inflate(R.layout.lista, parent, false); // aqui poderia estar o motivo do erro
+            ImageView myImagem = lista.findViewById(R.id.image);
+            TextView myNome = lista.findViewById(R.id.textView1);
+            TextView myDescricao = lista.findViewById(R.id.textView2);
 
             myImagem.setImageResource(rImagem[position]);
             myNome.setText(rNome[position]);
             myDescricao.setText(rDescricao[position]);
 
-            return lista_objetos;
+            return lista;
         }
     }
 }
