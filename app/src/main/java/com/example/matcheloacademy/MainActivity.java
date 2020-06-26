@@ -25,9 +25,9 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 public class MainActivity extends AppCompatActivity {
 
     ListView lvAulas;
-    String mNome[] = {"Algebra","Aritmética","Geometria","Análise Matemática"};
-    String mDescricao[] = {"a","b","c","d"};
-    int mImagem[] = {R.drawable.ic_baseline_star_24,R.drawable.ic_dashboard_black_24dp,R.drawable.ic_home_black_24dp,R.drawable.ic_notifications_black_24dp};
+    String[] mNome = {"Algebra","Aritmética","Geometria","Análise Matemática"};
+    String[] mDescricao = {"a","b","c","d"};
+    int[] mImagem = {R.drawable.ic_baseline_star_24,R.drawable.ic_dashboard_black_24dp,R.drawable.ic_home_black_24dp,R.drawable.ic_notifications_black_24dp};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -70,11 +70,11 @@ public class MainActivity extends AppCompatActivity {
     }
     class MyAdapter extends ArrayAdapter<String> {
         Context context;
-        String rNome[];
-        String rDescricao[];
-        int rImagem[];
+        String[] rNome;
+        String[] rDescricao;
+        int[] rImagem;
 
-        MyAdapter (Context c, String nome[], String descricao[], int imagem[]) {
+        MyAdapter (Context c, String[] nome, String[] descricao, int[] imagem) {
             super(c,R.layout.lista,R.id.textView1, nome);
             this.context = c;
             this.rNome = nome;
