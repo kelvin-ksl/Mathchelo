@@ -86,7 +86,7 @@ public class MainActivity extends AppCompatActivity {
         @Override
         public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
             LayoutInflater layoutInflater = (LayoutInflater)getApplicationContext().getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-            View lista = layoutInflater.inflate(R.layout.lista, parent, false); // aqui poderia estar o motivo do erro
+            View lista = layoutInflater.inflate(R.layout.lista, parent, false);
             ImageView myImagem = lista.findViewById(R.id.image);
             TextView myNome = lista.findViewById(R.id.textView1);
             TextView myDescricao = lista.findViewById(R.id.textView2);
