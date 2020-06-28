@@ -24,11 +24,6 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class MainActivity extends AppCompatActivity {
 
-    ListView lvAulas;
-    String[] mNome = {"Algebra","Aritmética","Geometria","Análise Matemática"};
-    String[] mDescricao = {"a","b","c","d"};
-    int[] mImagem = {R.drawable.ic_baseline_star_24,R.drawable.ic_dashboard_black_24dp,R.drawable.ic_home_black_24dp,R.drawable.ic_notifications_black_24dp};
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -43,59 +38,5 @@ public class MainActivity extends AppCompatActivity {
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment);
         NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration);
         NavigationUI.setupWithNavController(navView, navController);
-
-        //Começo do ListView
-        lvAulas = findViewById(R.id.lvAulas);
-
-        MyAdapter adapter = new MyAdapter(this , mNome, mDescricao, mImagem);
-        lvAulas.setAdapter(adapter);
-
-        lvAulas.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                if (position == 0) {
-                    Toast.makeText(MainActivity.this,"a", Toast.LENGTH_SHORT).show();
-                }
-                if (position == 0) {
-                    Toast.makeText(MainActivity.this,"b", Toast.LENGTH_SHORT).show();
-                }
-                if (position == 0) {
-                    Toast.makeText(MainActivity.this,"c", Toast.LENGTH_SHORT).show();
-                }
-                if (position == 0) {
-                    Toast.makeText(MainActivity.this,"d", Toast.LENGTH_SHORT).show();
-                }
-            }
-        });
-    }
-    class MyAdapter extends ArrayAdapter<String> {
-        Context context;
-        String[] rNome;
-        String[] rDescricao;
-        int[] rImagem;
-
-        MyAdapter (Context c, String[] nome, String[] descricao, int[] imagem) {
-            super(c,R.layout.lista,R.id.textView1, nome);
-            this.context = c;
-            this.rNome = nome;
-            this.rDescricao = descricao;
-            this.rImagem = imagem;
-        }
-
-        @NonNull
-        @Override
-        public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
-            LayoutInflater layoutInflater = (LayoutInflater)getApplicationContext().getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-            View lista = layoutInflater.inflate(R.layout.lista, parent, false);
-            ImageView myImagem = lista.findViewById(R.id.image);
-            TextView myNome = lista.findViewById(R.id.textView1);
-            TextView myDescricao = lista.findViewById(R.id.textView2);
-
-            myImagem.setImageResource(rImagem[position]);
-            myNome.setText(rNome[position]);
-            myDescricao.setText(rDescricao[position]);
-
-            return lista;
-        }
     }
 }
