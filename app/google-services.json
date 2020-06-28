@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "889091329613",
+    "firebase_url": "https://mathcheloacademy.firebaseio.com",
+    "project_id": "mathcheloacademy",
+    "storage_bucket": "mathcheloacademy.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:889091329613:android:f2d37670f50adb3a681604",
+        "android_client_info": {
+          "package_name": "com.example.matcheloacademy"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "889091329613-76fdg49c9hcdbqgb7mnct3b7303umn5f.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyApV_jU1ypbyS8yLnzH_7OzvEiaQ4YAi1M"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "889091329613-76fdg49c9hcdbqgb7mnct3b7303umn5f.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
