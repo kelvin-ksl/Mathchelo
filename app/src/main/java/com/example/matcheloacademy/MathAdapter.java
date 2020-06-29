@@ -27,18 +27,14 @@ import com.google.firebase.database.Transaction;
 
 import java.util.ArrayList;
 
-import com.example.matcheloacademy.CoffeeItem;
-import com.example.matcheloacademy.FavDB;
-import com.example.matcheloacademy.R;
+public class MathAdapter extends RecyclerView.Adapter<MathAdapter.ViewHolder> {
 
-public class CoffeeAdapter extends RecyclerView.Adapter<CoffeeAdapter.ViewHolder> {
-
-    private ArrayList<CoffeeItem> coffeeItems;
+    private ArrayList<MathItem> mathItems;
     private Context context;
     private FavDB favDB;
 
-    public CoffeeAdapter(ArrayList<CoffeeItem> coffeeItems, Context context) {
-        this.coffeeItems = coffeeItems;
+    public MathAdapter(ArrayList<MathItem> mathItems, Context context) {
+        this.mathItems = mathItems;
         this.context = context;
 
     }
@@ -62,20 +58,20 @@ public class CoffeeAdapter extends RecyclerView.Adapter<CoffeeAdapter.ViewHolder
 
 
     @Override
-    public void onBindViewHolder(@NonNull CoffeeAdapter.ViewHolder holder, int position) {
-        final CoffeeItem coffeeItem = coffeeItems.get(position);
+    public void onBindViewHolder(@NonNull MathAdapter.ViewHolder holder, int position) {
+        final MathItem mathItem = mathItems.get(position);
 
-        readCursorData(coffeeItem, holder);
-        holder.imageView.setImageResource(coffeeItem.getImageResourse());
-        holder.titleTextView.setText(coffeeItem.getTitle());
-        holder.url = coffeeItem.getUrl();
+        readCursorData(mathItem, holder);
+        holder.imageView.setImageResource(mathItem.getImageResourse());
+        holder.titleTextView.setText(mathItem.getTitle());
+        holder.url = mathItem.getUrl();
     }
 
 
 
     @Override
     public int getItemCount() {
-        return coffeeItems.size();
+        return mathItems.size();
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder {
@@ -109,9 +105,9 @@ public class CoffeeAdapter extends RecyclerView.Adapter<CoffeeAdapter.ViewHolder
                 @Override
                 public void onClick(View view) {
                     int position = getAdapterPosition();
-                    CoffeeItem coffeeItem = coffeeItems.get(position);
+                    MathItem mathItem = mathItems.get(position);
 
-                    likeClick(coffeeItem, favBtn, likeCountTextView);
+                    likeClick(mathItem, favBtn, likeCountTextView);
                 }
             });
         }
@@ -126,19 +122,19 @@ public class CoffeeAdapter extends RecyclerView.Adapter<CoffeeAdapter.ViewHolder
         editor.apply();
     }
 
-    private void readCursorData(CoffeeItem coffeeItem, ViewHolder viewHolder) {
-        Cursor cursor = favDB.read_all_data(coffeeItem.getKey_id());
+    private void readCursorData(MathItem mathItem, ViewHolder viewHolder) {
+        Cursor cursor = favDB.read_all_data(mathItem.getKey_id());
         SQLiteDatabase db = favDB.getReadableDatabase();
         try {
             while (cursor.moveToNext()) {
                 String item_fav_status = cursor.getString(cursor.getColumnIndex(FavDB.FAVORITE_STATUS));
-                coffeeItem.setFavStatus(item_fav_status);
+                mathItem.setFavStatus(item_fav_status);
 
                 //check fav status
                 if (item_fav_status != null && item_fav_status.equals("1")) {
-                    viewHolder.favBtn.setBackgroundResource(R.drawable.ic_favorite_red_24dp);
+                    viewHolder.favBtn.setBackgroundResource(R.drawable.ic_baseline_star_gold_24);
                 } else if (item_fav_status != null && item_fav_status.equals("0")) {
-                    viewHolder.favBtn.setBackgroundResource(R.drawable.ic_favorite_shadow_24dp);
+                    viewHolder.favBtn.setBackgroundResource(R.drawable.ic_baseline_star_shadow_24);
                 }
             }
         } finally {
@@ -150,16 +146,16 @@ public class CoffeeAdapter extends RecyclerView.Adapter<CoffeeAdapter.ViewHolder
     }
 
     // like click
-    private void likeClick (CoffeeItem coffeeItem, Button favBtn, final TextView textLike) {
+    private void likeClick (MathItem mathItem, Button favBtn, final TextView textLike) {
         DatabaseReference refLike = FirebaseDatabase.getInstance().getReference().child("likes");
-        final DatabaseReference upvotesRefLike = refLike.child(coffeeItem.getKey_id());
+        final DatabaseReference upvotesRefLike = refLike.child(mathItem.getKey_id());
 
-        if (coffeeItem.getFavStatus().equals("0")) {
+        if (mathItem.getFavStatus().equals("0")) {
 
-            coffeeItem.setFavStatus("1");
-            favDB.insertIntoTheDatabase(coffeeItem.getTitle(), coffeeItem.getImageResourse(),
-                    coffeeItem.getKey_id(), coffeeItem.getFavStatus());
-            favBtn.setBackgroundResource(R.drawable.ic_favorite_red_24dp);
+            mathItem.setFavStatus("1");
+            favDB.insertIntoTheDatabase(mathItem.getTitle(), mathItem.getImageResourse(),
+                    mathItem.getKey_id(), mathItem.getFavStatus());
+            favBtn.setBackgroundResource(R.drawable.ic_baseline_star_gold_24);
             favBtn.setSelected(true);
 
             upvotesRefLike.runTransaction(new Transaction.Handler() {
@@ -193,10 +189,10 @@ public class CoffeeAdapter extends RecyclerView.Adapter<CoffeeAdapter.ViewHolder
 
 
 
-        } else if (coffeeItem.getFavStatus().equals("1")) {
-            coffeeItem.setFavStatus("0");
-            favDB.remove_fav(coffeeItem.getKey_id());
-            favBtn.setBackgroundResource(R.drawable.ic_favorite_shadow_24dp);
+        } else if (mathItem.getFavStatus().equals("1")) {
+            mathItem.setFavStatus("0");
+            favDB.remove_fav(mathItem.getKey_id());
+            favBtn.setBackgroundResource(R.drawable.ic_baseline_star_shadow_24);
             favBtn.setSelected(false);
 
             upvotesRefLike.runTransaction(new Transaction.Handler() {

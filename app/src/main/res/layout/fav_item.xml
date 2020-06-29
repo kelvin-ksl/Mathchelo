@@ -11,14 +11,14 @@
         android:id="@+id/favImageView"
         android:layout_width="100dp"
         android:layout_height="100dp"
-        android:src="@drawable/coffee01"
+        android:src="@drawable/historia01"
         android:scaleType="centerCrop"/>
 
     <TextView
         android:id="@+id/favTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Latte"
+        android:text="Math"
         style="@style/TextAppearance.AppCompat.Medium"
         android:layout_gravity="center|start"
         android:layout_marginStart="120dp"/>
@@ -27,7 +27,7 @@
         android:id="@+id/favBtn"
         android:layout_width="30dp"
         android:layout_height="30dp"
-        android:background="@drawable/ic_favorite_red_24dp"
+        android:background="@drawable/ic_baseline_star_gold_24"
         android:layout_gravity="center|end"
         android:layout_marginEnd="8dp"/>
 

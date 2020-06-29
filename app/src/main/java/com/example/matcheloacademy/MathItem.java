@@ -1,6 +1,6 @@
 package com.example.matcheloacademy;
 
-public class CoffeeItem {
+public class MathItem {
 
     private int imageResource;
     private String title;
@@ -8,10 +8,10 @@ public class CoffeeItem {
     private String favStatus;
     private String url;
 
-    public CoffeeItem() {
+    public MathItem() {
     }
 
-    public CoffeeItem(int imageResource, String title, String key_id, String favStatus, String url) {
+    public MathItem(int imageResource, String title, String key_id, String favStatus, String url) {
         this.imageResource = imageResource;
         this.title = title;
         this.key_id = key_id;

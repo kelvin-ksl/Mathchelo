@@ -7,19 +7,18 @@ import android.view.ViewGroup;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
-import androidx.loader.content.CursorLoader;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
 
-import com.example.matcheloacademy.CoffeeAdapter;
-import com.example.matcheloacademy.CoffeeItem;
+import com.example.matcheloacademy.MathAdapter;
+import com.example.matcheloacademy.MathItem;
 import com.example.matcheloacademy.R;
 
 public class HomeFragment extends Fragment {
 
-    private ArrayList<CoffeeItem> coffeeItems = new ArrayList<>();
+    private ArrayList<MathItem> mathItems = new ArrayList<>();
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
@@ -27,18 +26,18 @@ public class HomeFragment extends Fragment {
 
         RecyclerView recyclerView = root.findViewById(R.id.recyclerView);
         recyclerView.setHasFixedSize(true);
-        recyclerView.setAdapter(new CoffeeAdapter(coffeeItems, getActivity()));
+        recyclerView.setAdapter(new MathAdapter(mathItems, getActivity()));
         recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
 
-        coffeeItems.add(new CoffeeItem(R.drawable.coffee01, "Historia da Matemática","0","0", "https://google.com"));
-        coffeeItems.add(new CoffeeItem(R.drawable.coffee02, "Álgebra","1","0", "https://monografias.brasilescola.uol.com.br/matematica/historia-matematica.htm"));
-        coffeeItems.add(new CoffeeItem(R.drawable.coffee03, "Aritmética","2","0", "https://monografias.brasilescola.uol.com.br/matematica/historia-matematica.htm"));
-        coffeeItems.add(new CoffeeItem(R.drawable.coffee04, "Geometria","3","0", "https://www.todamateria.com.br/matematica/geometria"));
-        coffeeItems.add(new CoffeeItem(R.drawable.coffee05, "Magic Coffee","4","0", "https://google.com"));
-        coffeeItems.add(new CoffeeItem(R.drawable.coffee06, "Swedish Coffee","5","0", "https://google.com"));
-        coffeeItems.add(new CoffeeItem(R.drawable.coffee07, "Mint Coffee","6","0", "https://google.com"));
-        coffeeItems.add(new CoffeeItem(R.drawable.coffee08, "Espresso","7","0", "https://google.com"));
-        coffeeItems.add(new CoffeeItem(R.drawable.coffee09, "Americano","8","0", "https://google.com"));
+        mathItems.add(new MathItem(R.drawable.historia01, "História da Matemática","0","0", "https://monografias.brasilescola.uol.com.br/matematica/historia-matematica.htm"));
+        mathItems.add(new MathItem(R.drawable.algebra01, "Introdução à Álgebra","1","0", "https://www.kuadro.com.br/posts/introducao-a-algebra-variaveis/"));
+        mathItems.add(new MathItem(R.drawable.aritmetica01, "Introdução à Aritmética","2","0", "https://resumos.mesalva.com/introducao-aritmetica-operacoes-basicas/"));
+        mathItems.add(new MathItem(R.drawable.geometria01, "Introdução à Geometria","3","0", "https://mundoeducacao.uol.com.br/matematica/geometria-1.htm"));
+        mathItems.add(new MathItem(R.drawable.alglinear01, "Álgebra Linear","4","0", "https://www.infoescola.com/matematica/algebra-linear/"));
+        mathItems.add(new MathItem(R.drawable.algbooleana01, "Álgebra Booleana","5","0", "https://brasilescola.uol.com.br/informatica/algebra-booleana.htm"));
+        mathItems.add(new MathItem(R.drawable.geoplana01, "Geometria Plana","6","0", "https://www.maisbolsas.com.br/enem/matematica/geometria-plana-conceitos-e-formulas"));
+        mathItems.add(new MathItem(R.drawable.geoespacial01, "Geometria Espacial","7","0", "https://www.educamaisbrasil.com.br/enem/matematica/geometria-espacial"));
+        mathItems.add(new MathItem(R.drawable.geoanalitica01, "Geometria Analítica","8","0", "https://mundoeducacao.uol.com.br/matematica/geometria-analitica.htm"));
 
 
         return root;

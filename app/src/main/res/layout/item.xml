@@ -14,40 +14,40 @@
     <ImageView
         android:id="@+id/imageView"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="150dp"
         android:scaleType="centerCrop"
-        android:src="@drawable/coffee01"/>
+        android:src="@drawable/historia01" />
 
     <TextView
         android:id="@+id/titleTextView"
+        style="@style/TextAppearance.AppCompat.Title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Latte"
-        android:textColor="#fff"
-        style="@style/TextAppearance.AppCompat.Title"
         android:layout_gravity="bottom"
-        android:layout_marginStart="18dp"
-        android:layout_marginBottom="18dp"/>
+        android:layout_marginStart="14dp"
+        android:layout_marginBottom="12dp"
+        android:text="Math"
+        android:textColor="#454545" />
 
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:layout_gravity="bottom|end"
-        android:layout_marginEnd="18dp"
-        android:layout_marginBottom="18dp">
+        android:layout_marginEnd="14dp"
+        android:layout_marginBottom="12dp">
 
         <Button
             android:id="@+id/favBtn"
             android:layout_width="30dp"
             android:layout_height="30dp"
-            android:background="@drawable/ic_favorite_shadow_24dp"/>
+            android:background="@drawable/ic_baseline_star_shadow_24"/>
 
         <TextView
             android:id="@+id/likeCountTextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="0"
+            android:text=""
             android:textColor="#fff"
             android:layout_marginStart="10dp"
             style="@style/TextAppearance.AppCompat.Body1"/>
