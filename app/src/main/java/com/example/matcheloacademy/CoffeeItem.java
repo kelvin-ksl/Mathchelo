@@ -2,27 +2,29 @@ package com.example.matcheloacademy;
 
 public class CoffeeItem {
 
-    private int imageResourse;
+    private int imageResource;
     private String title;
     private String key_id;
     private String favStatus;
+    private String url;
 
     public CoffeeItem() {
     }
 
-    public CoffeeItem(int imageResourse, String title, String key_id, String favStatus) {
-        this.imageResourse = imageResourse;
+    public CoffeeItem(int imageResource, String title, String key_id, String favStatus, String url) {
+        this.imageResource = imageResource;
         this.title = title;
         this.key_id = key_id;
         this.favStatus = favStatus;
+        this.url = url;
     }
 
     public int getImageResourse() {
-        return imageResourse;
+        return imageResource;
     }
 
-    public void setImageResourse(int imageResourse) {
-        this.imageResourse = imageResourse;
+    public void setImageResourse(int imageResource) {
+        this.imageResource = imageResource;
     }
 
     public String getTitle() {
@@ -47,5 +49,9 @@ public class CoffeeItem {
 
     public void setFavStatus(String favStatus) {
         this.favStatus = favStatus;
+    }
+
+    public String getUrl() {
+        return this.url;
     }
 }

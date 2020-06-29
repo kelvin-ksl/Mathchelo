@@ -9,6 +9,7 @@ import android.os.Looper;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.webkit.WebView;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -39,6 +40,7 @@ public class CoffeeAdapter extends RecyclerView.Adapter<CoffeeAdapter.ViewHolder
     public CoffeeAdapter(ArrayList<CoffeeItem> coffeeItems, Context context) {
         this.coffeeItems = coffeeItems;
         this.context = context;
+
     }
 
     @NonNull
@@ -66,6 +68,7 @@ public class CoffeeAdapter extends RecyclerView.Adapter<CoffeeAdapter.ViewHolder
         readCursorData(coffeeItem, holder);
         holder.imageView.setImageResource(coffeeItem.getImageResourse());
         holder.titleTextView.setText(coffeeItem.getTitle());
+        holder.url = coffeeItem.getUrl();
     }
 
 
@@ -80,6 +83,7 @@ public class CoffeeAdapter extends RecyclerView.Adapter<CoffeeAdapter.ViewHolder
         ImageView imageView;
         TextView titleTextView, likeCountTextView;
         Button favBtn;
+        String url = null;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
@@ -88,6 +92,17 @@ public class CoffeeAdapter extends RecyclerView.Adapter<CoffeeAdapter.ViewHolder
             titleTextView = itemView.findViewById(R.id.titleTextView);
             favBtn = itemView.findViewById(R.id.favBtn);
             likeCountTextView = itemView.findViewById(R.id.likeCountTextView);
+
+            //web
+            imageView.setOnClickListener(new View.OnClickListener() {
+
+                @Override
+                public void onClick(View v) {
+                    WebView webView = new WebView(context);
+
+                    webView.loadUrl(url);
+                }
+            });
 
             //add to fav btn
             favBtn.setOnClickListener(new View.OnClickListener() {
@@ -213,14 +228,5 @@ public class CoffeeAdapter extends RecyclerView.Adapter<CoffeeAdapter.ViewHolder
                 }
             });
         }
-
-
-
-
-
-
-
-
-
     }
 }
