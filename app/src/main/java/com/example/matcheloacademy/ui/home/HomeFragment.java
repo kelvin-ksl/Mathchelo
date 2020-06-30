@@ -33,11 +33,11 @@ public class HomeFragment extends Fragment {
         mathItems.add(new MathItem(R.drawable.algebra01, "Introdução à Álgebra","1","0", "https://www.kuadro.com.br/posts/introducao-a-algebra-variaveis/"));
         mathItems.add(new MathItem(R.drawable.aritmetica01, "Introdução à Aritmética","2","0", "https://resumos.mesalva.com/introducao-aritmetica-operacoes-basicas/"));
         mathItems.add(new MathItem(R.drawable.geometria01, "Introdução à Geometria","3","0", "https://mundoeducacao.uol.com.br/matematica/geometria-1.htm"));
-        mathItems.add(new MathItem(R.drawable.alglinear01, "Álgebra Linear","4","0", "https://www.infoescola.com/matematica/algebra-linear/"));
-        mathItems.add(new MathItem(R.drawable.algbooleana01, "Álgebra Booleana","5","0", "https://brasilescola.uol.com.br/informatica/algebra-booleana.htm"));
-        mathItems.add(new MathItem(R.drawable.geoplana01, "Geometria Plana","6","0", "https://www.maisbolsas.com.br/enem/matematica/geometria-plana-conceitos-e-formulas"));
-        mathItems.add(new MathItem(R.drawable.geoespacial01, "Geometria Espacial","7","0", "https://www.educamaisbrasil.com.br/enem/matematica/geometria-espacial"));
-        mathItems.add(new MathItem(R.drawable.geoanalitica01, "Geometria Analítica","8","0", "https://mundoeducacao.uol.com.br/matematica/geometria-analitica.htm"));
+        mathItems.add(new MathItem(R.drawable.alglinear02, "Álgebra Linear","4","0", "https://www.infoescola.com/matematica/algebra-linear/"));
+        mathItems.add(new MathItem(R.drawable.algbooleana02, "Álgebra Booleana","5","0", "https://brasilescola.uol.com.br/informatica/algebra-booleana.htm"));
+        mathItems.add(new MathItem(R.drawable.geoplana02, "Geometria Plana","6","0", "https://www.maisbolsas.com.br/enem/matematica/geometria-plana-conceitos-e-formulas"));
+        mathItems.add(new MathItem(R.drawable.geoespacial02, "Geometria Espacial","7","0", "https://www.educamaisbrasil.com.br/enem/matematica/geometria-espacial"));
+        mathItems.add(new MathItem(R.drawable.geoanalitica02, "Geometria Analítica","8","0", "https://mundoeducacao.uol.com.br/matematica/geometria-analitica.htm"));
 
 
         return root;
